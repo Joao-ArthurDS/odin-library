@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>My Library</title>
+</head>
+<body>
+    <button command="show-modal" commandfor="my-dialog">New book</button>
+    <dialog id="my-dialog" popover> 
+        <div class="dialog">
+            <label for="title">Title</label> <br />
+            <input type="text" id="title"> <br />
+
+            <label for="author">Author</label> <br />
+            <input type="text" id="author"><br />
+
+            <label for="pages">Number of Pages</label><br />
+            <input type="text" id="pages"><br />
+            <button onclick="addBookToLibrary();">Add book</button>    
+            <button commandfor="my-dialog" command="close">Cancel</button>
+        </div>
+    </dialog>
+</body>
+</html>
