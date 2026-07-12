@@ -8,19 +8,25 @@
     <title>My Library</title>
 </head>
 <body>
-    <button command="show-modal" commandfor="my-dialog">New book</button>
+    <button class="buttons" id="new_book" command="show-modal" commandfor="my-dialog">New book</button>
+
     <dialog id="my-dialog" popover> 
         <div class="dialog">
-            <label for="title">Title</label> <br />
-            <input type="text" id="title"> <br />
+            <form action="" id="book_info">
+                <label for="title">Title</label> <br>
+                <input type="text" id="title"> <br>
 
-            <label for="author">Author</label> <br />
-            <input type="text" id="author"><br />
+                <label for="author">Author</label> <br>
+                <input type="text" id="author"><br>
 
-            <label for="pages">Number of Pages</label><br />
-            <input type="text" id="pages"><br />
-            <button onclick="addBookToLibrary();">Add book</button>    
-            <button commandfor="my-dialog" command="close">Cancel</button>
+                <label for="pages">Number of Pages</label><br>
+                <input type="number" id="pages"><br>
+                
+                <label for="read">Already read?</label><br>
+                <input type="checkbox" id="read"><br><br> 
+            </form>
+            <button class="buttons" id="add_book" onclick="addBookToLibrary();">Add book</button>    
+            <button class="buttons" commandfor="my-dialog" command="close" onclick="clearDialog()">Cancel</button>
         </div>
     </dialog>
 </body>

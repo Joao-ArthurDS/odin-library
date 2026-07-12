@@ -1,4 +1,32 @@
-.dialog{
+body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+dialog{
+    border-radius: 15px;
+    background-color: rgb(93, 248, 189);
+}
+
+input{
+    border-radius: 4px;
+    border: 2;
+}
+
+.buttons{
+    height: 45px;
+    width: 76px;
+    border-radius: 6px;
+    border: 3px groove;
+}
+
+#add_book{
+    margin: 0 8px 0 5px;
+    border-color: rgb(21, 112, 202);
+}
+
+#new_book{
+    border-color: forestgreen;
+    width: 90px;
+    align-self: center;
 }

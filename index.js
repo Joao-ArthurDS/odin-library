@@ -8,12 +8,7 @@ function Book(title, author, pages, read){
     this.id = crypto.randomUUID();
 
     function info(){
-        if (this.read){
-            const beenRead = 'book already read'
-        }
-        else{
-            const beenRead = 'not read yet'
-        }
+        const beenRead = 'book already read' ? this.read : 'not read yet';
 
         `${this.title} by ${this.author}, ${this.pages} pages, ${beenRead}.`
     }
@@ -21,7 +16,18 @@ function Book(title, author, pages, read){
 
 function addBookToLibrary(){
     const title = document.getElementById('title').value; 
-    const author = document.getElementById('author').value
-    const pages = document.getElementById('pages').value
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
     const record = new Book(title, author, pages, false);
+
+    myLibrary.push(record);
+    clearDialog();
+    const bookForm = document.getElementById('my-dialog'); 
+    bookForm.close();
+}
+
+function clearDialog(){
+    const bookForm = document.getElementById('book_info'); 
+    bookForm.reset();
+        
 }
