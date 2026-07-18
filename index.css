@@ -1,6 +1,8 @@
 body{
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
 }
 
 dialog{
@@ -29,4 +31,21 @@ input{
     border-color: forestgreen;
     width: 90px;
     align-self: center;
+}
+
+.card{
+    border-radius: 8px;
+    background-color: crimson;
+    display: flex;
+    width: 25%;
+    height: 10rem;
+    flex-direction: column;
+    p{
+        font-size: small;
+        color: aqua;  
+        font-weight: bold;  
+        &:first-child{
+            font-size: medium;
+        }
+    }
 }
