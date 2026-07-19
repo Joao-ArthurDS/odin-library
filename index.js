@@ -42,6 +42,11 @@ function displayBooks(){
             div.classList.add('card');
             div.setAttribute('id', book.id);
             
+            const btnCancel = document.createElement('button');
+            btnCancel.innerHTML = 'Remove';
+
+            div.appendChild(btnCancel);
+
             const p1 = document.createElement('p');
             const p2 = document.createElement('p');
             const p3 = document.createElement('p');

@@ -1,8 +1,10 @@
 body{
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    overflow: auto;
 }
 
 dialog{
@@ -35,17 +37,28 @@ input{
 
 .card{
     border-radius: 8px;
-    background-color: crimson;
+    background-color: burlywood;
     display: flex;
     width: 25%;
     height: 10rem;
     flex-direction: column;
+    padding-left: 4px;
+    overflow: auto;
     p{
         font-size: small;
-        color: aqua;  
-        font-weight: bold;  
+        color: green;  
+        font-weight: bold;
+        width: fit-content;  
         &:first-child{
             font-size: medium;
         }
     }
+    button{
+        font-size: small;
+        &:first-child{
+            align-self: flex-end;
+            justify-self: flex-start;
+        }
+    }
+
 }
