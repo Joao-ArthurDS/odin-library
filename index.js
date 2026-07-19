@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, read){
     this.title = title;
@@ -35,7 +35,12 @@ function clearDialog(){
         
 };
 
-function displayBooks(){ 
+function displayBooks(bookID){ 
+    if (bookID){
+        const card_remove = document.getElementById(bookID);
+        body.removeChild(card_remove);
+    };
+
     for (var book of myLibrary){
         if (!document.getElementById(book.id)){
             const div = document.createElement('div');
@@ -44,7 +49,7 @@ function displayBooks(){
             
             const btnCancel = document.createElement('button');
             btnCancel.innerHTML = 'Remove';
-
+            btnCancel.addEventListener('click', removeBookFromLibrary);
             div.appendChild(btnCancel);
 
             const p1 = document.createElement('p');
@@ -60,7 +65,24 @@ function displayBooks(){
             p3.innerHTML = book.info();
             div.appendChild(p3);
 
+            const btnRead = document.createElement('button');
+            btnRead.innerHTML = 'Mark as Read/Unread';
+            btnRead.addEventListener('click', markBookAsRead);
+            div.appendChild(btnRead);            
+
             body.appendChild(div);
         }
     }
+};
+
+function removeBookFromLibrary(e){
+    const book_id = e.target.parentNode.id;
+    myLibrary = myLibrary.filter(() => { this.id !== book_id })
+    displayBooks(book_id);
+};
+
+function markBookAsRead(e){
+    const book_id = e.target.parentNode.id;
+    myLibrary = myLibrary.filter(() => { if (this.id === book_id){ this.read = !this.read } })
+    displayBooks();        
 };

@@ -4,7 +4,7 @@ body{
     flex-wrap: wrap;
     width: auto;
     height: auto;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 dialog{
@@ -15,6 +15,14 @@ dialog{
 input{
     border-radius: 4px;
     border: 2;
+}
+
+.new_book_sticky{
+    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 0;
 }
 
 .buttons{
@@ -40,24 +48,34 @@ input{
     background-color: burlywood;
     display: flex;
     width: 25%;
-    height: 10rem;
+    height: 11rem;
     flex-direction: column;
-    padding-left: 4px;
+    padding-left: 6px;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: gray burlywood;
+    margin: 0 8px 10px 0;
     p{
         font-size: small;
         color: green;  
         font-weight: bold;
-        width: fit-content;  
-        &:first-child{
+        width: fit-content;
+        margin-top: 5px;  
+        &:first-of-type{
             font-size: medium;
         }
     }
     button{
         font-size: small;
-        &:first-child{
+        &:first-of-type{
             align-self: flex-end;
             justify-self: flex-start;
+            margin: 10px 4px 0 0;
+        };
+        &:last-of-type{
+            align-self: center;
+            justify-self: flex-end;
+            margin: 0 0 5px 0;
         }
     }
 
