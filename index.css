@@ -71,7 +71,7 @@ input{
         &:first-of-type{
             align-self: flex-end;
             justify-self: flex-start;
-            margin: 10px 4px 0 0;
+            margin: 5px 4px 0 0;
         };
         &:last-of-type{
             align-self: center;

@@ -42,7 +42,7 @@ function displayBooks(bookID,read){
     };
 
     if (bookID && read){
-        const selector = 'div#'.concat(bookID,'.card > p:last-of-type');
+        const selector = `div[data-id="${bookID}"] > p:last-of-type`;
         const readDescription = document.querySelector(selector);
         for (var book of myLibrary){
             if (bookID === book.id)
@@ -54,6 +54,7 @@ function displayBooks(bookID,read){
         if (!document.getElementById(book.id)){
             const div = document.createElement('div');
             div.classList.add('card');
+            div.setAttribute('data-id', book.id);
             div.setAttribute('id', book.id);
             
             const btnCancel = document.createElement('button');
