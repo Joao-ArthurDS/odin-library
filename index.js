@@ -35,10 +35,19 @@ function clearDialog(){
         
 };
 
-function displayBooks(bookID){ 
-    if (bookID){
+function displayBooks(bookID,read){ 
+    if (bookID && !read){
         const card_remove = document.getElementById(bookID);
         body.removeChild(card_remove);
+    };
+
+    if (bookID && read){
+        const selector = 'div#'.concat(bookID,'.card > p:last-of-type');
+        const readDescription = document.querySelector(selector);
+        for (var book of myLibrary){
+            if (bookID === book.id)
+            readDescription.innerHTML = book.info();
+        } ;
     };
 
     for (var book of myLibrary){
@@ -78,11 +87,11 @@ function displayBooks(bookID){
 function removeBookFromLibrary(e){
     const book_id = e.target.parentNode.id;
     myLibrary = myLibrary.filter(() => { this.id !== book_id })
-    displayBooks(book_id);
+    displayBooks(book_id,false);
 };
 
 function markBookAsRead(e){
     const book_id = e.target.parentNode.id;
-    myLibrary = myLibrary.filter(() => { if (this.id === book_id){ this.read = !this.read } })
-    displayBooks();        
+    myLibrary.forEach((book) => { if(book.id === book_id){ book.read = !book.read }});
+    displayBooks(book_id,true);        
 };

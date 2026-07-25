@@ -1,6 +1,6 @@
 body{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     width: auto;
     height: auto;
@@ -23,6 +23,7 @@ input{
     display: flex;
     justify-content: center;
     top: 0;
+    margin-bottom: 8px;
 }
 
 .buttons{
@@ -47,7 +48,7 @@ input{
     border-radius: 8px;
     background-color: burlywood;
     display: flex;
-    width: 25%;
+    width: 23.9%;
     height: 11rem;
     flex-direction: column;
     padding-left: 6px;
